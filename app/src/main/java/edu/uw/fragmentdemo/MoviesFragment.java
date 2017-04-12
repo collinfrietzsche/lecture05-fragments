@@ -61,7 +61,6 @@ public class MoviesFragment extends Fragment {
         }catch(ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement OnMovieSelectedListend");
         }
-
     }
 
     @Override
@@ -116,6 +115,7 @@ public class MoviesFragment extends Fragment {
         @Override
         protected ArrayList<Movie> doInBackground(String... params) {
             ArrayList<Movie> data = MovieDownloader.downloadMovieData(params[0]);
+            Log.v(TAG, data.toString());
             return data;
         }
 
